@@ -1,0 +1,26 @@
+# backend/src/test/resources/application.yml
+
+# 테스트 환경 전용 설정
+spring:
+  # H2 인메모리 DB 설정
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # JPA가 H2에 맞게 작동하도록 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+  # [추가] 테스트 시에는 메일 서버가 없어도 되므로, 아무 값이나 넣어 Bean 생성만 되도록 함
+  mail:
+    host: localhost
+    port: 25
+
+# [추가] 테스트 시 사용할 임시 프론트 주소
+app:
+  front-base: "http://localhost:8080"
+  contact.email: "giveyoufox@gmail.com"

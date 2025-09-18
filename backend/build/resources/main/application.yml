@@ -1,0 +1,65 @@
+# backend/src/main/resources/application.yml
+
+# --- 공통 설정 ---
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+---
+# --- 'local' 프로필 ---
+spring:
+  config:
+    activate:
+      on-profile: "local"
+  mail:
+    host: "smtp.gmail.com"
+    port: 587
+    username: "giveyoufox@gmail.com"
+    password: "naepkaqssoyeyzoe"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:mariadb://db:3306/doitmoney
+    username: doitmoney
+    password: dudnemflqslek
+    driver-class-name: org.mariadb.jdbc.Driver
+
+app:
+  front-base: "http://localhost:3000"
+  contact.email: "giveyoufox@gmail.com"
+
+---
+# --- 'prod' 프로필 ---
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+  mail:
+    host: "smtp.gmail.com"
+    port: 587
+    username: "giveyoufox@gmail.com"
+    password: "naepkaqssoyeyzoe"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:mariadb://10.0.20.212:3306/doitmoney
+    username: doitmoney
+    password: dudnemflqslek
+    driver-class-name: org.mariadb.jdbc.Driver
+
+app:
+  front-base: "http://doitmoney.kro.kr"
+  contact.email: "giveyoufox@gmail.com"
