@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.hollywood.doitmoney.user.dto.*;
 import com.hollywood.doitmoney.user.entity.User;
 import com.hollywood.doitmoney.user.repository.UserRepository;
+import com.hollywood.doitmoney.user.exception.UserNotFoundException;
 
 @Service
 @RequiredArgsConstructor
@@ -58,8 +59,8 @@ public class UserService {
     }
 
     public UserProfileDto updateUser(Long id, UpdateUserReq req) {
-        User u = userRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "회원이 없습니다."));
+        User u = userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("ID가 " + userId + "인 회원을 찾을 수 없습니다."));
         u.setUsername(req.getUsername());
         u.setProfileImageUrl(req.getProfileImageUrl());
         userRepository.save(u);
@@ -75,7 +76,7 @@ public class UserService {
 
     public UserProfileDto getProfile(Long userId) {
         User u = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "회원이 없습니다."));
+                .orElseThrow(() -> new UserNotFoundException("ID가 " + userId + "인 회원을 찾을 수 없습니다."));
         return new UserProfileDto(
                 u.getUserId(), u.getEmail(), u.getUsername(),
                 u.getPhone(), u.getProfileImageUrl(),
@@ -85,7 +86,7 @@ public class UserService {
     /** 비밀번호 변경 **/
     public void changePassword(Long userId, ChangePasswordReq req) {
         User u = userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "회원이 없습니다."));
+                .orElseThrow(() -> new UserNotFoundException("ID가 " + userId + "인 회원을 찾을 수 없습니다."));
         if (!enc.matches(req.getOldPassword(), u.getPassword())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "기존 비밀번호가 일치하지 않습니다.");
         }

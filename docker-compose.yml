@@ -1,0 +1,31 @@
+# docker-compose.yml
+
+version: '3.8'
+services:
+  # Spring Boot 백엔드 서비스
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      # 이 한 줄로 application-local.yml 설정을 불러옵니다.
+      - SPRING_PROFILES_ACTIVE=local
+    depends_on:
+      - db
+
+  # MariaDB 데이터베이스 서비스
+  db:
+    image: mariadb:10.6
+    ports:
+      - "3306:3306"
+    environment:
+      - MARIADB_ROOT_PASSWORD=rootpassword
+      - MARIADB_DATABASE=doitmoney
+      # application.yml에 맞춰 DB 컨테이너의 사용자/비밀번호를 설정합니다.
+      - MARIADB_USER=doitmoney
+      - MARIADB_PASSWORD=dudnemflqslek
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

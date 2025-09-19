@@ -1,0 +1,34 @@
+# .gitignore
+
+# Build files
+/build/
+!/build/.gitkeep
+
+# Gradle files
+.gradle
+/gradle/
+/gradlew
+/gradlew.bat
+
+# IDE files
+.idea/
+*.iml
+*.iws
+out/
+
+# Log files
+*.log
+
+# Temp files
+*~
+*.tmp
+
+# Mac specific
+.DS_Store
+
+# Docker
+docker-compose.yml.override
+
+# Secrets - Never commit these!
+# secrets.properties
+# application-secrets.yml
