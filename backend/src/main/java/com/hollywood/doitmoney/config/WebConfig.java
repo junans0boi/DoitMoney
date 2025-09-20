@@ -27,3 +27,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .addResourceLocations(location);
     }
 }
+
+// git add .
+// git commit -m "feat: JWT 구현 완료 및 초기 세팅 완료"
