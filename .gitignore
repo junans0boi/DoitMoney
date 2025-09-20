@@ -1,17 +1,15 @@
-# .gitignore
+# .gitignore (수정본)
 
 # Build files
-/build/
-!/build/.gitkeep
+/backend/build/
+!/backend/build/.gitkeep
 
 # Gradle files
-.gradle
-/gradle/
-/gradlew
-/gradlew.bat
+/backend/.gradle/
 
 # IDE files
 .idea/
+.vscode/
 *.iml
 *.iws
 out/
@@ -30,5 +28,4 @@ out/
 docker-compose.yml.override
 
 # Secrets - Never commit these!
-# secrets.properties
-# application-secrets.yml
+.env

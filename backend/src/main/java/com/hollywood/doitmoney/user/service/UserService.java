@@ -59,8 +59,9 @@ public class UserService {
     }
 
     public UserProfileDto updateUser(Long id, UpdateUserReq req) {
-        User u = userRepository.findById(userId)
-                .orElseThrow(() -> new UserNotFoundException("ID가 " + userId + "인 회원을 찾을 수 없습니다."));
+        User u = userRepository.findById(id) // userId -> id
+                .orElseThrow(() -> new UserNotFoundException("ID가 " + id + "인 회원을 찾을 수 없습니다.")); // userId -> id
+
         u.setUsername(req.getUsername());
         u.setProfileImageUrl(req.getProfileImageUrl());
         userRepository.save(u);

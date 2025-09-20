@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hollywood.doitmoney.DoitmoneyApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-18T12:11:41.108Z" hostname="Junzzang-Mui-MacBookPro.local" time="0.254">
+<testsuite name="com.hollywood.doitmoney.DoitmoneyApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-19T05:36:16.716Z" hostname="Junzzang-Mui-MacBookPro.local" time="0.265">
   <properties/>
-  <testcase name="contextLoads()" classname="com.hollywood.doitmoney.DoitmoneyApplicationTests" time="0.254"/>
-  <system-out><![CDATA[21:11:39.084 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hollywood.doitmoney.DoitmoneyApplicationTests]: DoitmoneyApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:11:39.141 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hollywood.doitmoney.DoitmoneyApplication for test class com.hollywood.doitmoney.DoitmoneyApplicationTests
+  <testcase name="contextLoads()" classname="com.hollywood.doitmoney.DoitmoneyApplicationTests" time="0.265"/>
+  <system-out><![CDATA[14:36:14.739 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hollywood.doitmoney.DoitmoneyApplicationTests]: DoitmoneyApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:36:14.792 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hollywood.doitmoney.DoitmoneyApplication for test class com.hollywood.doitmoney.DoitmoneyApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,19 +14,19 @@
 
  :: Spring Boot ::                (v3.5.5)
 
-2025-09-18T21:11:39.354+09:00  INFO 64688 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : Starting DoitmoneyApplicationTests using Java 21.0.8 with PID 64688 (started by junzzang_m1 in /Users/junzzang_m1/Documents/GitHub/DoitMoney/backend)
-2025-09-18T21:11:39.354+09:00  INFO 64688 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2025-09-18T21:11:39.686+09:00  INFO 64688 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-18T21:11:39.717+09:00  INFO 64688 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
-2025-09-18T21:11:39.953+09:00  INFO 64688 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-18T21:11:39.974+09:00  INFO 64688 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-09-18T21:11:39.988+09:00  INFO 64688 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-18T21:11:40.111+09:00  INFO 64688 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-18T21:11:40.124+09:00  INFO 64688 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-18T21:11:40.215+09:00  INFO 64688 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-09-18T21:11:40.216+09:00  INFO 64688 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-18T21:11:40.227+09:00  WARN 64688 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-09-18T21:11:40.236+09:00  INFO 64688 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-09-19T14:36:14.978+09:00  INFO 25770 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : Starting DoitmoneyApplicationTests using Java 21.0.8 with PID 25770 (started by junzzang_m1 in /Users/junzzang_m1/Documents/GitHub/DoitMoney/backend)
+2025-09-19T14:36:14.979+09:00  INFO 25770 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-09-19T14:36:15.268+09:00  INFO 25770 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-19T14:36:15.297+09:00  INFO 25770 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2025-09-19T14:36:15.527+09:00  INFO 25770 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-19T14:36:15.547+09:00  INFO 25770 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-09-19T14:36:15.560+09:00  INFO 25770 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-19T14:36:15.681+09:00  INFO 25770 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-19T14:36:15.693+09:00  INFO 25770 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-19T14:36:15.772+09:00  INFO 25770 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-09-19T14:36:15.773+09:00  INFO 25770 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-19T14:36:15.783+09:00  WARN 25770 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-19T14:36:15.792+09:00  INFO 25770 --- [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -34,12 +34,12 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-09-18T21:11:40.612+09:00  INFO 64688 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-18T21:11:40.636+09:00  INFO 64688 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-18T21:11:40.823+09:00  INFO 64688 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2025-09-18T21:11:40.847+09:00  WARN 64688 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-18T21:11:41.076+09:00  WARN 64688 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/**'], Ant [pattern='/static/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
-2025-09-18T21:11:41.101+09:00  INFO 64688 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : Started DoitmoneyApplicationTests in 1.889 seconds (process running for 2.521)
+2025-09-19T14:36:16.154+09:00  INFO 25770 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-19T14:36:16.176+09:00  INFO 25770 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-19T14:36:16.350+09:00  INFO 25770 --- [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-09-19T14:36:16.493+09:00  WARN 25770 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-19T14:36:16.683+09:00  WARN 25770 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/static/**'], Ant [pattern='/static/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2025-09-19T14:36:16.710+09:00  INFO 25770 --- [    Test worker] c.h.doitmoney.DoitmoneyApplicationTests  : Started DoitmoneyApplicationTests in 1.855 seconds (process running for 2.362)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/junzzang_m1/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.7/fbf3d6d649ed37fc9e9c59480a05be0a26e3c2da/byte-buddy-agent-1.17.7.jar)

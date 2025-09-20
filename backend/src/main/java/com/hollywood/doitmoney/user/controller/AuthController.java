@@ -5,13 +5,13 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-// ↓ 이 줄이 빠져있어서 Authentication을 못 찾고 있었습니다.
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.web.bind.annotation.*;
 
 import com.hollywood.doitmoney.user.dto.VerificationResponseDto;
+import com.hollywood.doitmoney.security.JwtUtil;
 import com.hollywood.doitmoney.user.dto.CompleteSignupReq;
 import com.hollywood.doitmoney.user.dto.UserDto;
 import com.hollywood.doitmoney.user.dto.VerificationCodeDto;
@@ -29,6 +29,7 @@ public class AuthController {
     private final EmailVerificationService verifSvc;
     private final UserService userService;
     private final AuthenticationManager authManager;
+    private final JwtUtil jwtUtil;
 
     // 이메일 인증 없이 바로 가입하는 디버그용 API를 임시
     @PostMapping("/dev-register")
@@ -37,28 +38,17 @@ public class AuthController {
         return ResponseEntity.ok("테스트 계정 등록 완료");
     }
 
-    /** 로그인 **/
     @PostMapping("/login")
-    public ResponseEntity<Void> login(
-            @RequestBody UserDto dto,
-            HttpServletRequest request // ← 추가
-    ) {
-        // 1) 인증 시도
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(dto.getEmail(),
-                dto.getPassword());
-        Authentication auth = authManager.authenticate(token);
+    public ResponseEntity<Map<String, String>> login(@RequestBody UserDto dto) {
+        // 1. Spring Security를 통해 사용자 인증
+        authManager.authenticate(
+                new UsernamePasswordAuthenticationToken(dto.getEmail(), dto.getPassword()));
 
-        // 2) SecurityContextHolder에 인증 정보 저장
-        SecurityContextHolder.getContext().setAuthentication(auth);
+        // 2. 인증 성공 시, 사용자 이메일을 기반으로 JWT 생성
+        final String jwt = jwtUtil.generateToken(dto.getEmail());
 
-        // 3) 세션 생성(또는 기존 세션 재사용) 후 SecurityContext 저장
-        HttpSession session = request.getSession(true);
-        session.setAttribute(
-                HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
-                SecurityContextHolder.getContext());
-
-        // 4) 빈 200 OK 응답만 내려주면 됩니다.
-        return ResponseEntity.ok().build();
+        // 3. 생성된 토큰을 JSON 형태로 클라이언트에게 반환
+        return ResponseEntity.ok(Map.of("token", jwt));
     }
 
     // 이하 send-verification, verify, register 메서드는 그대로 두시면 됩니다.

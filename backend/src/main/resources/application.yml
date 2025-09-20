@@ -19,8 +19,9 @@ spring:
   mail:
     host: "smtp.gmail.com"
     port: 587
-    username: "giveyoufox@gmail.com"
-    password: "naepkaqssoyeyzoe"
+    username: "${MAIL_USERNAME}" 
+    password: "${MAIL_PASSWORD}" 
+
     properties:
       mail:
         smtp:
@@ -29,8 +30,8 @@ spring:
             enable: true
   datasource:
     url: jdbc:mariadb://db:3306/doitmoney
-    username: doitmoney
-    password: dudnemflqslek
+    username: "${DB_USER}"      
+    password: "${DB_PASSWORD}" 
     driver-class-name: org.mariadb.jdbc.Driver
 
 app:
@@ -46,8 +47,8 @@ spring:
   mail:
     host: "smtp.gmail.com"
     port: 587
-    username: "giveyoufox@gmail.com"
-    password: "naepkaqssoyeyzoe"
+    username: "${MAIL_USERNAME}"  
+    password: "${MAIL_PASSWORD}"
     properties:
       mail:
         smtp:
@@ -56,8 +57,8 @@ spring:
             enable: true
   datasource:
     url: jdbc:mariadb://10.0.20.212:3306/doitmoney
-    username: doitmoney
-    password: dudnemflqslek
+    username: "${DB_USER}" 
+    password: "${DB_PASSWORD}" 
     driver-class-name: org.mariadb.jdbc.Driver
 
 app:
